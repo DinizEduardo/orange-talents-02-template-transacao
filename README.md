@@ -139,3 +139,33 @@ Devemos criar uma API com as seguintes restrições:
 - Retornar status code **200** com as últimas 10 compras (transações)
 - Retornar status code **404** quando o cartão não for encontrado.
 
+## 11-AUTENTICAÇÃO
+
+### Contexto
+
+Construir APIs é uma tarefa bem divertida, porém as APIs quando mal implementadas expõe dados sensíveis
+do negócio em questão, permite que haja vazamento de dados dos nossos clientes e outras coisa que causam uma
+reação bastante ruim para o negócio em si.
+
+Implementar mecanismos de segurança em nossas APIs são primordiais e devem ser pensados desde o primeiro dia do
+projeto, devemos incorporar segurança em nossos design de código e arquitetura.
+
+### Objetivo
+
+Proteger nossa aplicação de ataques externos, vazamentos de dados e ataques nocivos ao nosso negócio.
+
+### Necessidades
+
+Configurar mecanismo de segurança na aplicação de fatura. Vamos adotar o padrão de mercado chamado OAuth2.
+
+### Restrições
+
+* Não vamos realizar a manipulação de usuários, então não podemos criar nenhum usuário no sistema.
+* Utilizar a claim JWT **scope** para proteger a aplicação.
+
+### Resultado Esperado
+
+* Nossa aplicação **transação** deve atuar como entidade **Resource Server**!
+
+* Configuração do Spring Security na nossa aplicação com o módulo OAuth2 apontando para o nosso servidor de Autorização,
+  nesse caso o Keycloak!
