@@ -117,3 +117,25 @@ Implementar o consumo das mensagens do tópico de transações.
 ### Resultado Esperado
 
 Novo serviço recebendo informações de transações de cartões.
+
+## 10-CONSULTAR-COMPRAS-RECENTES
+
+### Objetivo
+
+Buscar as últimas transações do cartão de crédito.
+
+### Necessidades
+
+O portador do cartão deseja realizar uma consulta para obter as últimas compras do cartão de crédito.
+
+### Restrições
+
+Devemos criar uma API com as seguintes restrições:
+
+- Identificador do cartão é obrigatório e deve ser informado na URL (path parameter).
+
+### Resultado Esperado
+
+- Retornar status code **200** com as últimas 10 compras (transações)
+- Retornar status code **404** quando o cartão não for encontrado.
+
